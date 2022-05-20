@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Reviews  -->
+    <route url="/V1/shopReviews/:id" method="GET">
+        <service class="Sfedu\ShopsManage\Api\ReviewRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Sfedu_ShopsManage::shops_reviews"/>
+        </resources>
+    </route>
+    <route url="/V1/shopReviews/shop/:shopId/:page" method="GET">
+        <service class="Sfedu\ShopsManage\Api\ReviewRepositoryInterface" method="getShopReviewsApprovedPage"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/shopReviews/shop/:shopId/:page/:pageSize" method="GET">
+        <service class="Sfedu\ShopsManage\Api\ReviewRepositoryInterface" method="getShopReviewsApprovedPage"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/shopReviews/all/shop/:shopId/:page/:pageSize" method="GET">
+        <service class="Sfedu\ShopsManage\Api\ReviewRepositoryInterface" method="getShopReviewsPage"/>
+        <resources>
+            <resource ref="Sfedu_ShopsManage::shops_reviews"/>
+        </resources>
+    </route>
+
+    <route url="/V1/shopReviews/approve/:reviewId/:approved" method="PUT">
+        <service class="Sfedu\ShopsManage\Api\ReviewRepositoryInterface" method="setReviewApproved"/>
+        <resources>
+            <resource ref="Sfedu_ShopsManage::shops_reviews"/>
+        </resources>
+    </route>
+</routes>

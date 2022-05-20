@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Sfedu_ShopsManage::css/backend.css"/>
+        <css src="Sfedu_ShopsManage::css/listing.css"/>
+        <link src="Sfedu_ShopsManage::js/notification_init.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="shop_listing"/>
+        </referenceContainer>
+    </body>
+</page>

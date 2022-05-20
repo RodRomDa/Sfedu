@@ -1,0 +1,174 @@
+Back,Назад
+Save,Сохранить
+Delete,Удалить
+"Are you sure you want to delete this shop ?","Вы уверены что хотите удалить этот филиал ?"
+Town,Город
+Add,Добавить
+"Delete Shop","Удалить Филиал"
+"Save Shop","Сохранить Филиал"
+"Rating has been deleted","Рейтинг был удалён"
+"Error while trying to delete shop","Ошибка во время попытки удаления филиала"
+Ratings,Рейтинги
+"Please correct the data sent.","Пожалуйста, исправте отправленные данные."
+"New Rating","Новый Рейтинг"
+"You saved the rating.","Вы сохранили рейтинг."
+"Something went wrong while saving the shop.","Что-то пошло не так при сохранении филиала."
+"Shops Reviews","Отзывы о Филиалах"
+"Reviews of %1","Отзывы %1"
+"Shop has been deleted","Филиал был удалён"
+"Shop Edit","Редактировать Филилал"
+"Please select one or more shop.","Пожалуйста выберите один и более филиалов."
+"A total of %1 record(s) have been deleted.","Всего %1 запись(-ей) было удалено."
+"A total of %1 record(s) have status changed.","Всего %1 запись(-ей) изменило статус."
+"New Shop","Новый Филиал"
+"This shop no longer exists.","Этот филиал больше не существует."
+"You saved the shop.","Вы сохранили филиал."
+"Shops List","Список Филиалов"
+"We can't receive your review right now.","Мы не можем получить ваш отзыв в данный момент."
+"Thanks for the feedback! Your review will be considered.","Спасибо за обратную связь! Ваш отзыв будет рассмотрен."
+Home,Главная
+label,label
+"Something went wrong while saving the file(s).","Что-то пошло не так во время сохранения файла(-ов)."
+"File validation failed.","Валидация файла прошла не успешно."
+"File can not be saved to the destination folder.","Файл не может быть сохранён в папку назначения."
+"Unable to find rating with ID ""%1""","Невозможно найти рейтинг с ID ""%1"""
+"Please enter a review summary.","Пожалуйста введите заголовок отзыва."
+"Please enter a nickname.","Пожалуйста введите ваш псевдоним."
+"Please enter a review.","Пожалуйста оставте отзыв."
+"Unable to find review with ID ""%1""","Невозможно найти отзыв с ID ""%1"""
+"Unable to find shop with ID ""%1""","Невозможно найти филиал с ID ""%1"""
+Shops,Филиалы
+View,Посмотреть
+"Delete %1","Удалить %1"
+"Are you sure you want to delete a %1 record?","Вы уверены, что хотите удалить %1 ?"
+Edit,Редактировать
+"* Required Fields","* Необходимые поля"
+"Write Your Own Review","Оставте свой отзыв"
+"Your Rating","Ваша оценка"
+"%1 %2","%1 %2"
+Nickname,Псевдоним
+Summary,Заголовок
+Review,Отзыв
+"Submit Review","Отправить отзыв"
+"Only registered users can write reviews. Please <a href=""%1"">Sign in</a> or <a href=""%2"">create an account</a>","Только зарегистрированные пользователи могут оставлять отзывы. Пожалуйста <a href=""%1"">Войдите</a> или <a href=""%2"">Создайте аккаунт</a>"
+"No description provided","Подробное описание не предоставлено"
+"Delete image","Удалить изображение"
+"Items per page","Элементов на одной странице"
+"Reviews per page","Отзывов на одной странице"
+"No reviews provided for this shop","Никаких отзывов не предоставлено для данного филиала"
+"Please select one of each of the ratings above.","Пожалуйста оцените по каждому рейтингу выше."
+"Shops Configuration","Конфигурация филиалов"
+"Number of shops on one page","Кол-во филиалов на одной странице"
+"Shop town options","Опции городов филиалов"
+"Rating New","Новый Рейтинг"
+Name,Название
+"Stars Number","Кол-во звёзд"
+"Add New Rating","Добавить новый рейтинг"
+Id,Id
+"Shop New","Новый Филиал"
+"Store View","Представление для отображения"
+Title,Название
+Address,Адрес
+"Open Time","Время открытия"
+"Close Time","Время закрытия"
+"Open time","Время открытия"
+"Close time","Время закрытия"
+"-- Please Select --","-- Пожалуйста выберите --"
+"Shop Enabled","Филиал отображается"
+"Shop description","Описание филиала"
+Image,Изображение
+General,Основное
+"Meta data","Метаданные"
+"Page title","Заголовок страницы"
+"Meta description","Мета-описание"
+text,текст
+"Meta keywords","Ключевые слова"
+"Hot deals","Типовые товары филиала"
+"Add New Shop","Добавить новый филиал"
+"Change visibility","Изменить видимость"
+Enable,Отобразить
+Disable,Скрыть
+"Enabled","Отображается"
+"Disabled","Не отображается"
+"Are you sure to delete selected items?","Вы уверены, что хотите удалить выбранные элементы?"
+"Delete items","Удалить элементы"
+"Open Hours","Часы работы"
+Status,Статут
+ID,ID
+SKU,SKU
+Price,Цена
+Visibility,Видимость
+Websites,Веб-сайты
+"Shop Title","Название"
+"Shop's Title","Название филиала"
+Reviews,Отзывы
+Thumbnail,Изображение
+Upload,Загрузить
+"Select from Gallery","Выбрать из галереи"
+Yes,Да
+No,Нет
+"Show / Hide Editor","Показать / Скрыть Редактор"
+Filters,Фильтры
+"Search by keyword","Найти"
+"Insert Widget...","Вставить виджет..."
+"Insert Image...","Вставить изображение..."
+"Insert Variable...","Вставить переменную..."
+"Insert Variable...","Вставить переменную..."
+"Media Gallery","Медиа галерея"
+"Delete Folder","Удалить папку"
+"Create Folder","Создать папку"
+"Search Adobe Stock","Найти в Adobe Stock"
+"Upload Images","Загрузить изображения"
+"Default View","Обычное представление"
+"Add Selected","Использовать выбранное"
+Attention,Внимание
+"You haven't selected any items!","Вы не выбрали ни одного элемента!"
+Export,Экспортировать
+Cancel,Отмена
+"records found","результатов найдено"
+Actions,Действия
+"Apply Filters","Применить фильтры"
+"Clear all","Отчистить все"
+Keyword,"Поиск"
+"Active filters:","Применённые фильтры:"
+"Active filters","Применённые фильтры",
+"Active filters\:","Применённые фильтры",module,Magento_Ui
+"Active filters\\:","Применённые фильтры\\:",module,Magento_Ui
+"Active filters\\:","Применённые фильтры\\:",module,Sfedu_ShopsManage
+"We couldn't find any records.","Ни одной результата не найдено."
+"Go to Details Page","Перейти к странице описания"
+from,от
+to,до
+Active,Активные
+filters,фильтры
+"of ","из "
+"Shop typical products","Типовые товары филиала"
+"Typical products","Типовые товары филиала"
+"Shop Store View","Представление для отображения"
+"Not displayed","Не отображается"
+"Displayed","Отображается"
+"What is this?","Что это?"
+"By: ","Автор: "
+Approved,Одобрен
+"Not approved","Не одобрен"
+"Please enter a valid phone number. For example 89505326690 or +79505326690 or (951)-532-6690.","Пожалуйста, введите правильный телефонный номер. Например, 89505326690 или +79505326690 или (951)-532-6690."
+"Telephone number","Номер телефона"
+"Display","Отобразить"
+"Hide","Скрыть"
+"Is shop displayed in storefront","Отображать ли филиал на сайте"
+"Allow change of page size","Разрешить изменение размера страницы"
+"Allow users to change number of element on one result page","Разрешить пользователям менять кол-во результатов на одной странице"
+"Default number of reviews on one page","Кол-во отзывов на одной странице (по умолчанию)"
+"Maximum file size","Максимальный размер файла"
+"Allowed file types","Разрешённые типы файлов:"
+"Choose store view to display shop in.","Выберите представление интернет-магазина, в котором будет отображаться филиал"
+"Choose Time","Выберите время"
+"Number of stars to display for this rating (value from 2 to 15)","Кол-во звёзд оценивания для данного рейтинга (значение от 2 до 15)"
+"Save Edits","Сохранить изменения"
+"Please make corrections to the errors in the table below and re-submit.","Пожалуйста, исправте некорретные данные в таблице и сохраните заново"
+"There are {placeholder} messages requires your attention.","Имеется {placeholder} сообщений, требующих вашего внимания."
+"Shops Reviews Stats","Статистика отзывов о филиалах"
+of,из
+"Use system value","Использовать значение по умолчанию"
+"Browse to find or drag image here","Нажмите для поиска или перетяните сюда изображение"
+"per page","на странице"

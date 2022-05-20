@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="shopsmanage" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Shops</label>
+            <tab>general</tab>
+            <resource>Sfedu_ShopsManage::config_shops</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shops Configuration</label>
+                <field id="shop_page_count" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Number of shops on one page</label>
+                    <validate>validate-number validate-greater-than-zero</validate>
+                </field>
+                <field id="shop_page_change" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Allow change of page size</label>
+                    <comment>Allow users to change number of element on one result page</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="review_page_count" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Default number of reviews on one page</label>
+                    <validate>validate-number validate-greater-than-zero</validate>
+                </field>
+                <field id="shop_towns" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Shop town options</label>
+                    <frontend_model>Sfedu\ShopsManage\Block\Adminhtml\Form\Field\Towns</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

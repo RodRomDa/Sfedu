@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">shop_listing.shop_listing_data_source</item>
+            <item name="deps" xsi:type="string">shop_listing.shop_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">shop_columns</item>
+    </argument>
+    <dataSource name="shop_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Sfedu\ShopsManage\Ui\DataProvider\Shop\Listing\ShopListingFront</argument>
+            <argument name="name" xsi:type="string">shop_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">shop_id</argument>
+            <argument name="requestFieldName" xsi:type="string">shop_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="shops/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="cacheRequests" xsi:type="boolean">false</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters">
+            <filterRange name="open_time"
+                         class="Sfedu\ShopsManage\Ui\Component\Listing\Filter\TimeRange"
+                         provider="${ $.parentName }"
+                         sortOrder="30">
+                <settings>
+                    <rangeType>text</rangeType>
+                    <label translate="true">Open Hours</label>
+                    <dataScope>open_time</dataScope>
+                </settings>
+            </filterRange>
+        </filters>
+    </listingToolbar>
+    <columns name="shop_columns">
+        <settings>
+            <dndConfig>
+                <param name="enabled" xsi:type="boolean">false</param>
+            </dndConfig>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">shop_listing.shop_listing.shop_columns.actions</item>
+                    <item name="target" xsi:type="string">applyAction</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">view</item>
+                        <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+
+        <column name="thumbnail" component="Sfedu_ShopsManage/js/grid/columns/thumbnail" class="Sfedu\ShopsManage\Ui\Component\Listing\Column\Thumbnail">
+            <settings>
+                <hasPreview>0</hasPreview>
+                <altField>title</altField>
+                <label translate="true">Thumbnail</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+
+        <column name="title" sortOrder = "20">
+            <settings>
+                <label translate="true">Shop Title</label>
+                <filter>text</filter>
+                <sortable>true</sortable>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+
+        <column name="open_time" sortOrder = "30" class="Sfedu\ShopsManage\Ui\Component\Listing\Column\TimeColumn">
+            <settings>
+                <label translate="true">Open Hours</label>
+                <sortable>true</sortable>
+            </settings>
+        </column>
+
+        <column name="town" sortOrder = "40">
+            <settings>
+                <label translate="true">Town</label>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <sortable>true</sortable>
+                <options class="Sfedu\ShopsManage\Ui\DataProvider\Shop\Source\TownOptions"/>
+            </settings>
+        </column>
+
+        <column name="tel" sortOrder = "45">
+            <settings>
+                <label translate="true">Telephone number</label>
+                <filter>text</filter>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+
+        <column name="address" sortOrder = "50">
+            <settings>
+                <label translate="true">Address</label>
+                <filter>text</filter>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+
+        <!-- action column view -->
+        <actionsColumn name="actions" class="Sfedu\ShopsManage\Ui\Component\Listing\Column\FrontShopActions">
+            <settings>
+                <indexField>shop_id</indexField>
+                <visible>false</visible>
+                <statefull>
+                    <property name="visible" xsi:type="boolean">false</property>
+                </statefull>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

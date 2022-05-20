@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Sfedu\ShopsManage\Api\ShopRepositoryInterface" type="Sfedu\ShopsManage\Model\ShopRepository" />
+    <preference for="Sfedu\ShopsManage\Api\Data\ShopInterface" type="Sfedu\ShopsManage\Model\Shop" />
+    <preference for="Sfedu\ShopsManage\Api\Data\ShopSearchResultInterface" type="Sfedu\ShopsManage\Model\ShopSearchResult" />
+    <preference for="Sfedu\ShopsManage\Api\Data\RatingInterface" type="Sfedu\ShopsManage\Model\Rating" />
+    <preference for="Sfedu\ShopsManage\Api\RatingRepositoryInterface" type="Sfedu\ShopsManage\Model\RatingRepository" />
+    <preference for="Sfedu\ShopsManage\Api\Data\ReviewInterface" type="Sfedu\ShopsManage\Model\Review" />
+    <preference for="Sfedu\ShopsManage\Api\Data\ReviewVoteInterface" type="Sfedu\ShopsManage\Model\ReviewVote" />
+    <preference for="Sfedu\ShopsManage\Api\ReviewRepositoryInterface" type="Sfedu\ShopsManage\Model\ReviewRepository" />
+    <preference for="Sfedu\ShopsManage\Api\Data\ReviewPageInterface" type="Sfedu\ShopsManage\Model\ReviewPage" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="shop_grid_listing_data_source" xsi:type="string">Sfedu\ShopsManage\Model\ResourceModel\Shop\Grid\Collection</item>
+                <item name="shop_listing_data_source" xsi:type="string">Sfedu\ShopsManage\Model\ResourceModel\Shop\Grid\Collection</item>
+                <item name="rating_grid_listing_data_source" xsi:type="string">Sfedu\ShopsManage\Model\ResourceModel\Rating\Grid\Collection</item>
+                <item name="shop_review_grid_listing_data_source" xsi:type="string">Sfedu\ShopsManage\Model\ResourceModel\Shop\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Sfedu\ShopsManage\ShopImageUploader" type="Sfedu\ShopsManage\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">shopsmanage/tmp/shop</argument>
+            <argument name="basePath" xsi:type="string">shopsmanage/shop</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+            <argument name="allowedMimeTypes" xsi:type="array">
+                <item name="jpg" xsi:type="string">image/jpg</item>
+                <item name="jpeg" xsi:type="string">image/jpeg</item>
+                <item name="gif" xsi:type="string">image/gif</item>
+                <item name="png" xsi:type="string">image/png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Sfedu\ShopsManage\Controller\Adminhtml\Shops\Image\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Sfedu\ShopsManage\ShopImageUploader</argument>
+        </arguments>
+    </type>
+
+    <type name="Sfedu\ShopsManage\Controller\Adminhtml\Shops\Save">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Sfedu\ShopsManage\ShopImageUploader</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Sfedu\ShopsManage\DataProvider\Shop\Listing\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="max_items" xsi:type="array">
+                    <item name="class" xsi:type="string">Sfedu\ShopsManage\Ui\DataProvider\Shop\Modifier\ShopListingModifier</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Sfedu\ShopsManage\Ui\DataProvider\Shop\Listing\ShopListing">
+        <arguments>
+            <argument name="pool" xsi:type="object">Sfedu\ShopsManage\DataProvider\Shop\Listing\Modifier\Pool</argument>
+        </arguments>
+    </type>
+
+    <type name="Sfedu\ShopsManage\Ui\DataProvider\Shop\Listing\ShopListingFront">
+        <arguments>
+            <argument name="pool" xsi:type="object">Sfedu\ShopsManage\DataProvider\Shop\Listing\Modifier\Pool</argument>
+        </arguments>
+    </type>
+
+</config>

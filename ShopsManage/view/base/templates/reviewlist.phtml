@@ -1,0 +1,18 @@
+<?php
+/** @var $block \Sfedu\ShopsManage\Block\ReviewList */
+/**  @var $escaper \Magento\Framework\Escaper */
+?>
+<div id="reviews" class="reviews-container" data-bind="scope: 'review-list'" >
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+{
+     "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "review-list": <?= json_encode($block->getConfig()) ?>
+                }
+            }
+     }
+}
+</script>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Sfedu_ShopsManage::shops" title="Shops" sortOrder="10"/>
+                <resource id="Sfedu_ShopsManage::rating" title="Ratings" sortOrder="10"/>
+                <resource id="Sfedu_ShopsManage::shops_reviews" title="Reviews" sortOrder="10"/>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Sfedu_ShopsManage::config_shops" title="Shops" translate="title" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

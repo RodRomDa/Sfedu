@@ -1,0 +1,203 @@
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">shop_grid_listing.shop_grid_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New Shop</label>
+            </button>
+        </buttons>
+        <spinner>shopsmanage_shop_columns</spinner>
+        <deps>
+            <dep>shop_grid_listing.shop_grid_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="shop_grid_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">shop_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="Sfedu\ShopsManage\Ui\DataProvider\Shop\Listing\ShopListing" name="shop_grid_listing_data_source">
+            <settings>
+                <requestFieldName>shop_id</requestFieldName>
+                <primaryFieldName>shop_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+<!--        <bookmark name="bookmarks"/>-->
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters">
+            <filterRange name="open_time"
+                         class="Sfedu\ShopsManage\Ui\Component\Listing\Filter\TimeRange"
+                         provider="${ $.parentName }"
+                         template="ui/grid/filters/elements/group"
+                         sortOrder="40">
+                <settings>
+                    <rangeType>text</rangeType>
+                    <label translate="true">Open Hours</label>
+                    <dataScope>open_time</dataScope>
+                </settings>
+            </filterRange>
+        </filters>
+        <paging name="listing_paging"/>
+<!--        <exportButton name="export_button"/>-->
+
+        <massaction name="listing_massaction" component="Magento_Ui/js/grid/tree-massactions">
+            <action name="status">
+                <settings>
+                    <type>status</type>
+                    <label translate="true">Change visibility</label>
+                    <actions>
+                        <action name="0">
+                            <type>enable</type>
+                            <label translate="true">Display</label>
+                            <url path="*/*/massStatus">
+                                <param name="status">1</param>
+                            </url>
+                        </action>
+                        <action name="1">
+                            <type>disable</type>
+                            <label translate="true">Hide</label>
+                            <url path="*/*/massStatus">
+                                <param name="status">0</param>
+                            </url>
+                        </action>
+                    </actions>
+                </settings>
+            </action>
+
+            <action name="delete">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure to delete selected items?</message>
+                        <title translate="true">Delete items</title>
+                    </confirm>
+                    <url path="*/*/massDelete"/>
+                    <type>delete</type>
+                    <label translate="true">Delete</label>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+
+    <columns name="shopsmanage_shop_columns">
+        <settings>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">shop_grid_listing.shop_grid_listing.shopsmanage_shop_columns.actions</item>
+                    <item name="target" xsi:type="string">applyAction</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">edit</item>
+                        <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+        <selectionsColumn name="ids" sortOrder = "0">
+            <settings>
+                <indexField>shop_id</indexField>
+            </settings>
+        </selectionsColumn>
+
+        <column name="shop_id" sortOrder="10">
+            <settings>
+                <label translate="true">Id</label>
+                <visible>false</visible>
+                <statefull/>
+            </settings>
+        </column>
+
+        <column name="thumbnail" sortOrder="15" component="Magento_Ui/js/grid/columns/thumbnail" class="Sfedu\ShopsManage\Ui\Component\Listing\Column\Thumbnail">
+            <settings>
+                <hasPreview>0</hasPreview>
+                <altField>title</altField>
+                <label translate="true">Thumbnail</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+
+        <column name="title" sortOrder = "20">
+            <settings>
+                <label translate="true">Shop Title</label>
+                <filter>text</filter>
+                <sortable>true</sortable>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+
+        <column name="open_time" sortOrder = "30" class="Sfedu\ShopsManage\Ui\Component\Listing\Column\TimeColumn">
+            <settings>
+                <label translate="true">Open Hours</label>
+                <sortable>true</sortable>
+            </settings>
+        </column>
+
+        <column name="town" sortOrder = "40">
+            <settings>
+                <label translate="true">Town</label>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <sortable>true</sortable>
+                <options class="Sfedu\ShopsManage\Ui\DataProvider\Shop\Source\TownOptions"/>
+            </settings>
+        </column>
+
+        <column name="tel" sortOrder = "50">
+            <settings>
+                <label translate="true">Telephone number</label>
+                <filter>text</filter>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+
+        <column name="address" sortOrder = "60">
+            <settings>
+                <label translate="true">Address</label>
+                <filter>text</filter>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+
+        <column name="is_active" component = "Magento_Ui/js/grid/columns/select" sortOrder = "100">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="options" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="value" xsi:type="string">0</item>
+                            <item name="label" xsi:type="string" translate="true">Not displayed</item>
+                        </item>
+                        <item name="1" xsi:type="array">
+                            <item name="value" xsi:type="string">1</item>
+                            <item name="label" xsi:type="string" translate="true">Displayed</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="sortable" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- action column edit -->
+        <actionsColumn name="actions" class="Sfedu\ShopsManage\Ui\Component\Listing\Column\ShopsActions">
+            <settings>
+                <indexField>shop_id</indexField>
+                <visible>false</visible>
+                <statefull>
+                    <property name="visible" xsi:type="boolean">false</property>
+                </statefull>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

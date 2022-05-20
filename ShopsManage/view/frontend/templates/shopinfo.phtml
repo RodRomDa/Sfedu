@@ -1,0 +1,71 @@
+<?php
+/**  @var $block \Sfedu\ShopsManage\Block\ShopInfo */
+/**  @var $escaper \Magento\Framework\Escaper */
+/** @var \Magento\CatalogWidget\Block\Product\ProductsList $productList */
+$productList = $this->getChildBlock('catalog.products');
+/** @var \Magento\Catalog\Helper\Image $imageHelper */
+$imageHelper = $this->getImageHelper();
+?>
+
+<?php $shop = $block->getShop(); ?>
+<div class="shop_block">
+    <div class="shop_content">
+        <div class="right">
+            <?php if ($shop->hasImage()): ?>
+                <img src="<?= $escaper->escapeHtml($shop->getImageUrl()) ?>" alt="Shop image">
+            <?php else: ?>
+                <img src="<?= $escaper->escapeHtml($imageHelper->getDefaultPlaceholderUrl('image')) ?>" alt="Shop image">
+            <?php endif; ?>
+        </div>
+        <div class="left">
+            <div class="shop_title">
+                <h1><?= $escaper->escapeHtml($shop->getTitle()) ?></h1>
+            </div>
+            <div class="infotable">
+                <div class="item">
+                    <div class="name">
+                        <?=__('Town').':' ?>
+                    </div>
+                    <div class="value">
+                        <?= $escaper->escapeHtml($shop->getTown()) ?>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name">
+                        <?=__('Open Hours').':' ?>
+                    </div>
+                    <div class="value">
+                        <?= $escaper->escapeHtml($shop->getOpenTime()) . ' - ' . $escaper->escapeHtml($shop->getCloseTime()) ?>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name">
+                        <?=__('Telephone number').':' ?>
+                    </div>
+                    <div class="value">
+                        <a href="tel:<?= $escaper->escapeHtmlAttr($shop->getTel()) ?>"><?= $escaper->escapeHtml($shop->getTel()) ?></a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name">
+                        <?=__('Address').':' ?>
+                    </div>
+                    <div class="value">
+                        <?= $escaper->escapeHtml($shop->getAddress()) ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shop_descr">
+        <h2><?=__('Description')?></h2>
+        <div class="descr">
+            <?php if ($shop->hasContent()): ?>
+                <?= $block->processContent($shop->getContent()) ?>
+            <?php else: ?>
+            <?= __('No description provided') ?>
+            <?php endif ?>
+        </div>
+    </div>
+    <?= $productList->toHtml(); ?>
+</div>

@@ -1,0 +1,14 @@
+
+<div class="data-grid-cell-content">
+    <span class="rating-stars-label" text="$col.getLabel($row())"></span>
+    <div class="rating-stars">
+        <div class="filled-rating"
+             each="new Array($col.getMaxStars())"
+             ko-style="width: $col.getPercent($row())">
+            <span class="star"></span>
+        </div>
+        <div class="empty-rating" each="new Array($col.getMaxStars())">
+            <span class="star"></span>
+        </div>
+    </div>
+</div>

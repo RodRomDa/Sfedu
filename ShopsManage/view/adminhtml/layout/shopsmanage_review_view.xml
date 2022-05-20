@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Sfedu_ShopsManage::css/rating.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Sfedu\ShopsManage\Block\Adminhtml\ReviewList" name="shop.reviews.list" template="reviewlist.phtml">
+                <arguments>
+                    <argument name="component" xsi:type="string">Sfedu_ShopsManage/js/review/admin-review-list</argument>
+                    <argument name="xtemplate" xsi:type="string">Sfedu_ShopsManage/review/admin-review-list</argument>
+                    <argument name="page_size" xsi:type="number">5</argument>
+                    <argument name="fetch_url" xsi:type="string">rest/V1/shopReviews/all/shop</argument>
+                    <argument name="approve_url" xsi:type="string">rest/V1/shopReviews/approve</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

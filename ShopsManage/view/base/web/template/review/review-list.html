@@ -1,0 +1,42 @@
+<div if="items().length||isLoading()">
+    <div class="paging-size">
+        <p translate="'Reviews per page'"></p>
+        <input type="text" class="paging-num" ko-value="pageSize">
+    </div>
+    <div class="reviews" each="items()">
+        <div class="review">
+            <div class="review-article">
+                <h3 class = "review-title" text="title"></h3>
+                <p class = "review-date" ><text args="$parent.formatDate(creation_date)"/></p>
+                <p class = "review-author" data-bind="text: $t('By: ') + nickname"></p>
+                <p class = "review-description" ><text args="detail"/></p>
+            </div>
+            <div class="review-ratings" each="ratings">
+                <div class="rating">
+                    <p class="rating-name" text="rating.name"></p>
+                    <span class="rating-stars-label" text="value"></span>
+                    <div class="rating-stars">
+                        <div class="filled-rating" each="new Array(rating.stars_num)"
+                             ko-style="width: $parents[1].getPercent(value, rating.stars_num)">
+                            <span class="star"></span>
+                        </div>
+                        <div class="empty-rating" each="new Array(rating.stars_num)">
+                            <span class="star"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="paging">
+        <button class="paging-btn prev" click="onPrev"></button>
+        <input id="page-num" type="text" class="paging-num" ko-value="page"/>
+        <label for="page-num"><translate args="'of'"/> <text args="totalPages()"/></label>
+        <button class="paging-btn next" click="onNext"></button>
+    </div>
+</div>
+<ifnot args="items().length||isLoading()">
+    <div class="message-container">
+        <span class = "message-no-items"translate="'No reviews provided for this shop'"></span>
+    </div>
+</ifnot>

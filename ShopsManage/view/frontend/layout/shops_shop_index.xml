@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Sfedu_ShopsManage::css/shopinfo.css"/>
+        <css src="Sfedu_ShopsManage::css/rating.css"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title" display="false"/>
+        <referenceContainer name="content">
+            <block class="Sfedu\ShopsManage\Block\ShopInfo" name="shopinfo" template="shopinfo.phtml">
+                <arguments>
+                    <argument name="image_helper" xsi:type="object">\Magento\Catalog\Helper\Image</argument>
+                </arguments>
+                <block class="Magento\CatalogWidget\Block\Product\ProductsList" name = "catalog.products" template="Magento_CatalogWidget::product/widget/content/grid.phtml"/>
+            </block>
+            <block class="Sfedu\ShopsManage\Block\ReviewForm" name="shop.review.form" template="reviewform.phtml">
+                <block class="Sfedu\ShopsManage\Block\ReviewList" name="shop.reviews.list" template="reviewlist.phtml">
+                    <arguments>
+                        <argument name="component" xsi:type="string">Sfedu_ShopsManage/js/review/review-list</argument>
+                        <argument name="xtemplate" xsi:type="string">Sfedu_ShopsManage/review/review-list</argument>
+                        <argument name="page_size" xsi:type="number">5</argument>
+                        <argument name="fetch_url" xsi:type="string">rest/V1/shopReviews/shop</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
