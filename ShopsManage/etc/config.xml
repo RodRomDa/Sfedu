@@ -3,7 +3,7 @@
     <default>
         <shopsmanage>
             <general>
-                <shop_page_count>10</shop_page_count>
+                <shop_page_count>5</shop_page_count>
                 <shop_page_change>0</shop_page_change>
                 <review_page_count>5</review_page_count>
                 <shop_towns>

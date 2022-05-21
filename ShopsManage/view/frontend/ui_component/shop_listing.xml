@@ -40,6 +40,11 @@
         </filters>
     </listingToolbar>
     <columns name="shop_columns">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="template" xsi:type="string">Sfedu_ShopsManage/grid/listing</item>
+            </item>
+        </argument>
         <settings>
             <dndConfig>
                 <param name="enabled" xsi:type="boolean">false</param>
