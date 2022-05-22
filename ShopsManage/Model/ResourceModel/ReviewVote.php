@@ -3,12 +3,14 @@
 
 namespace Sfedu\ShopsManage\Model\ResourceModel;
 
-
+/**
+ * ReviewVote resource model
+ */
 class ReviewVote extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
 
     /**
-     * Rating constructor
+     * ReviewVote constructor
      *
      * @param \Magento\Framework\Model\ResourceModel\Db\Context $context
      */

@@ -14,6 +14,9 @@ use Sfedu\ShopsManage\Model\Shop\FileInfo;
  */
 class Shop extends AbstractModel implements ShopInterface, IdentityInterface
 {
+    /**
+     * Cache properties for auto block updates
+     */
     const CACHE_TAG = 'sfedu_shopsmanage_shop';
 
     protected $_cacheTag = self::CACHE_TAG;
@@ -47,7 +50,6 @@ class Shop extends AbstractModel implements ShopInterface, IdentityInterface
      * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
      * @param array $data
      */
-
     public function __construct(
         \Magento\Framework\Model\Context $context,
         \Magento\Framework\Registry $registry,
@@ -64,6 +66,9 @@ class Shop extends AbstractModel implements ShopInterface, IdentityInterface
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
 
+    /**
+     * Resource model initializtion
+     */
     protected function _construct()
     {
         $this->_init(\Sfedu\ShopsManage\Model\ResourceModel\Shop::class);

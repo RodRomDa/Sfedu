@@ -2,7 +2,7 @@
 namespace Sfedu\ShopsManage\Model\ResourceModel;
 
 /**
- * Shop resource
+ * Shop resource model
  */
 class Shop extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {

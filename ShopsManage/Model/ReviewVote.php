@@ -6,6 +6,11 @@ use Sfedu\ShopsManage\Api\Data\RatingInterface;
 use Sfedu\ShopsManage\Api\Data\RatingVoteInterface;
 use Sfedu\ShopsManage\Api\RatingRepositoryInterface;
 
+/**
+ * ReviewVote Model
+ *
+ * Represents votes for shop of specific review
+ */
 class ReviewVote extends \Magento\Framework\DataObject implements RatingVoteInterface
 {
     /**
@@ -15,6 +20,8 @@ class ReviewVote extends \Magento\Framework\DataObject implements RatingVoteInte
 
     /**
      * ReviewVote constructor.
+     *
+     * @param RatingRepositoryInterface $ratingRepository
      * @param array $data
      */
     public function __construct(

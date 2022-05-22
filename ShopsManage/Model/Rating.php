@@ -7,6 +7,11 @@ namespace Sfedu\ShopsManage\Model;
 use Magento\Framework\Model\AbstractModel;
 use Sfedu\ShopsManage\Api\Data\RatingInterface;
 
+/**
+ * Rating Model
+ *
+ * Represents rating of shop
+ */
 class Rating extends AbstractModel implements RatingInterface
 {
 

@@ -7,6 +7,11 @@ use Sfedu\ShopsManage\Api\RatingRepositoryInterface;
 use Sfedu\ShopsManage\Model\ResourceModel\Rating\Collection as RatingCollection;
 use Sfedu\ShopsManage\Model\ResourceModel\Rating\CollectionFactory as RatingCollectionFactory;
 
+/**
+ * Rating Repository
+ *
+ * Provides service to retrieve and save ratings
+ */
 class RatingRepository implements RatingRepositoryInterface
 {
 

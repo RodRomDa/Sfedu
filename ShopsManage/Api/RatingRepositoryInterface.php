@@ -7,6 +7,7 @@ use Sfedu\ShopsManage\Api\Data\RatingInterface;
 /**
  * RatingRepository interface
  * @api
+ * Provides service to retrieve and save ratings
  */
 interface RatingRepositoryInterface
 {

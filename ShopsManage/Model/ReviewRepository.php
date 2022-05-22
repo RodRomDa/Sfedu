@@ -9,6 +9,11 @@ use Sfedu\ShopsManage\Api\ReviewRepositoryInterface;
 use Sfedu\ShopsManage\Model\ResourceModel\Review\CollectionFactory as ReviewCollectionFactory;
 use Sfedu\ShopsManage\Model\ResourceModel\Review\Collection as ReviewCollection;
 
+/**
+ * Review Repository
+ *
+ * Provides service to retrieve and save shop reviews and their ratings
+ */
 class ReviewRepository implements ReviewRepositoryInterface
 {
     /**

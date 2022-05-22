@@ -8,6 +8,11 @@ use Magento\Integration\Model\Oauth\TokenFactory;
 use Sfedu\ShopsManage\Block\ReviewList;
 
 
+/**
+ * Class InjectAdminToken
+ *
+ * Work around to use secure rest api in admin area
+ */
 class InjectAdminToken {
 
     /** @var TokenFactory */
@@ -17,6 +22,11 @@ class InjectAdminToken {
     private $adminSession;
 
 
+    /**
+     * InjectAdminToken constructor.
+     * @param TokenFactory $tokenFactory
+     * @param AdminSession $adminSession
+     */
     public function __construct(
         TokenFactory $tokenFactory,
         AdminSession $adminSession
@@ -25,6 +35,13 @@ class InjectAdminToken {
         $this->adminSession = $adminSession;
     }
 
+    /**
+     * Inject admin token
+     *
+     * @param ReviewList $subject
+     * @param $details
+     * @return array
+     */
     public function afterGetConfig(ReviewList $subject, $details): array
     {
         $details['token'] = $this->getToken();
@@ -32,6 +49,11 @@ class InjectAdminToken {
         return $details;
     }
 
+    /**
+     * Get admin token
+     *
+     * @return string
+     */
     private function getToken()
     {
         $token = $this->tokenFactory->create()

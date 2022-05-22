@@ -6,6 +6,7 @@ namespace Sfedu\ShopsManage\Api;
 /**
  * ReviewRepository interface
  * @api
+ * Provides service to retrieve and save shop reviews and their ratings
  */
 interface ReviewRepositoryInterface
 {

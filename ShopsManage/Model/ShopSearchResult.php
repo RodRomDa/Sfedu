@@ -9,6 +9,8 @@ use Sfedu\ShopsManage\Api\Data\ShopSearchResultInterface;
 
 /**
  * Class ShopSearchResult
+ *
+ * Search result for data provider
  */
 class ShopSearchResult extends SearchResults implements ShopSearchResultInterface
 {

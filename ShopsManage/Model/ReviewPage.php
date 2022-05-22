@@ -6,6 +6,11 @@ namespace Sfedu\ShopsManage\Model;
 
 use Sfedu\ShopsManage\Api\Data\ReviewPageInterface;
 
+/**
+ * ReviewPage
+ *
+ * Represents page of review results
+ */
 class ReviewPage extends \Magento\Framework\DataObject implements ReviewPageInterface
 {
 

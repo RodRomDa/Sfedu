@@ -6,6 +6,11 @@ use Magento\Framework\Model\AbstractModel;
 use Sfedu\ShopsManage\Api\Data\RatingVoteInterface;
 use Sfedu\ShopsManage\Api\Data\ReviewInterface;
 
+/**
+ * Review Model
+ *
+ * Represents customer review of shop
+ */
 class Review extends AbstractModel implements ReviewInterface
 {
     /**
